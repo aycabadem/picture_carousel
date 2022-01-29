@@ -26,23 +26,27 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
+          backgroundColor: Color(0xFFFBCAFF),
           title: Text('Picture Carousel'),
         ),
-        body: Center(
-          child: SafeArea(
-            child: CarouselSlider(
-                options: CarouselOptions(autoPlay: true),
-                items: _imagePaths.map((imagePath) {
-                  return Builder(builder: (context) {
-                    return Container(
-                        width: MediaQuery.of(context).size.width,
-                        margin: EdgeInsets.symmetric(horizontal: 4),
-                        child: Image.asset(
-                          imagePath,
-                          fit: BoxFit.cover,
-                        ));
-                  });
-                }).toList()),
+        body: Container(
+          color: Color(0xFFFDEBF7),
+          child: Center(
+            child: SafeArea(
+              child: CarouselSlider(
+                  options: CarouselOptions(autoPlay: true),
+                  items: _imagePaths.map((imagePath) {
+                    return Builder(builder: (context) {
+                      return Container(
+                          width: MediaQuery.of(context).size.width,
+                          margin: EdgeInsets.symmetric(horizontal: 4),
+                          child: Image.asset(
+                            imagePath,
+                            fit: BoxFit.cover,
+                          ));
+                    });
+                  }).toList()),
+            ),
           ),
         ),
       ),
